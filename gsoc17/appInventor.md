@@ -6,7 +6,7 @@ This challenge involved solving two problems with respect to the code base of Ap
 
 2.  The second part of the challenge required us to design a feature that would allow users to automatically take pictures. To implement this feature all we need to do is add a method in the class Camera.java (discussed in the point 1) and annotate it with *@SimpleFunction*. Lets call this function *TakePictureAuto()*. Inside this method we use the Camera API to automatically click a picture, store it in the */Pictures* folder in external storage and trigger the *AfterPicture* event just like in *TakePicture()*. Note it is important to annotate *TakePictureAuto()* with *@SimpleFunction* because that would make it visible to the user in the Blocks editor, allowing her to invoke this function from the blocks editor. Following is a code snippet for TakePictureAuto:
 
-  Camera camera;
+  ``` Camera camera;
   int CameraId;
   
   @SimpleFunctiom
@@ -31,4 +31,4 @@ This challenge involved solving two problems with respect to the code base of Ap
       break;
     }
     return cameraId;
-  }
+  }```
