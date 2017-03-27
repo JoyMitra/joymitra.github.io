@@ -8,14 +8,16 @@ This challenge involved solving two problems with respect to the code base of Ap
 
   ``` Camera camera;
   int CameraId;
+  private String imageFileName;
   
-  @SimpleFunctiom
+  @SimpleFunction
   public void TakePictureAuto(){
     int cameraId = findCamera();
     if(cameraId < 0) raise Error;
     else camera = Camera.open(CameraId);
     camera.startPreview();
     camera.takePicture(null,null,new PhotoHandler(container.$context));
+    AfterPicture(new File(context.getFilesDir(), imageFileName).toString());  
   }
   
   /*
@@ -31,4 +33,32 @@ This challenge involved solving two problems with respect to the code base of Ap
       break;
     }
     return cameraId;
-  }```
+  }
+  /*
+  handle the onPictureTaken event and save the image in internal storage.
+  */
+  private class PhotoHandler implements Camera.PictureCallback {
+    private final String TAG = "PhotoHandler";
+    @Override
+    public void onPictureTaken(byte[] data, Camera camera){
+        imageFileName = "app_inventor_" + new Date().getTime();
+        FileOutputStream outputStream;
+        try{
+            outputStream = container.$context.openFileOutput(imageFileName, container.$context.MODE_PRIVATE);
+            outputStream.write(data);
+        }
+        catch(FileNotFoundException fe){
+            fe.printStackTrace();
+            Log.d(TAG,imageFile + "not found");
+        }
+        catch(IOException ioe){
+            ioe.printStackTrace();
+            Log.d(TAG,"error occurred while writing to " + imageFile);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            Log.d(TAG,"error occurred but not related to IO");
+        }
+    }
+  }
+  ```
