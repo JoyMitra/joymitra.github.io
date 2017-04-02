@@ -13,8 +13,15 @@
   I believe that working for App Inventor over the summer will give me ideas about my own research since I am also thinking of a visual platform for my methodology</p>
 
 <h2 id="Q2">Proposed summer project</h2>
-<p>I would like to extend App Inventor with support for background services as listed in the <a href="https://github.com/mit-cml/appinventor-sources/wiki/Projects-GSoC-17">ideas</a> section.
-  App Inventor already supports Non Visible Components. Background Services in Android can be treated as Non Visible Components. </p>
+ <h4>Synopsis</h4>
+
+<p>
+  Components are the building blocks of app inventor. They can be visible i.e. they are part of UI interface or they can be non visible i.e they are not part of the UI screen but provide access to built-in functions of the device. All components in app inventor are part of some screen or activity which means that if the screen is not visible or the screen is destroyed by the Android system, the components stop running. An example of this is the Pedometer component which stops running when the phone screen is off. Ideally, a pedometer app would want to keep running once started in the background until the user of the app explicitly stops it. To enable such behavior it is necessary to run such components on a thread separate from the UI thread in the background.  
+</p>
+<h4>Benefits to community</h4>
+  <p>
+    Enabling components to run in a background process will allow app inventor developers to build more sophisticated apps. By leveraging the ability to schedule tasks to run in the background, developing with app inventor will take the community a step closer to native android development.  
+  </p>
 
 <h2 id="Q3">Interest in introductory programming</h2>
 <p>I worked 3.5 years as a Programmer Analyst for Cognizant Technology Solutions in India. Out of the 3.5 years I spent 2.5 years
