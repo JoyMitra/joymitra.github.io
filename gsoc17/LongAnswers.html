@@ -22,6 +22,37 @@
   <p>
     Enabling components to run in a background process will allow app inventor developers to build more sophisticated apps. By leveraging the ability to schedule tasks to run in the background, developing with app inventor will take the community a step closer to native android development.  
   </p>
+  <h4>Deliverables and Timeline</h4>
+  <p>
+    The project can be divided into a clear set of tasks that need to be achieved. In the following points I list out what needs to be done:
+  </p>  
+  <ul>
+    <li>Android provides a number of APIs to schedule tasks that need to run outside of the scope of the application’s lifecycle. We will need to research each one of those and decide whether some or all will be a good fit for app inventor. Following is a brief description of each:
+      <ol>
+        <li>The <b>Service API</b> provides helper functions through which a background process or a service can be created, started or stopped. However, if the main application process inside which the service runs is killed, the Android system will kill the service as well. This is fine for most cases but sometimes a background process will need to keep running even if the main application process is killed e.g. pedometer. In such cases we can use the following approach:</li>
+          <ul>
+            <li>a broadcast receiver to re-start the service every time it gets destroyed. When the system decides to kill a process it kills all the components associated with it. Before destroying each component, the system invokes the onDestory() method to check if anything needs to be done before destorying the component. For an activity we can override onDestroy() and stop the service. When a service is stopped, we can trigger the broadcast receiver and re-start the service. This way we can ensure that any service keeps running in the background. If we want the service to remember some data we could save the data in internal storage when the service is destroyed and read it from there every time the service restarts. A downside to this approach is that this could take a toll on the battery and some mechanism needs to be worked out that will eventually stop the service (e.g. some logic inside onDestory() that will not trigger the broadcast receiver based on some conditions). </li>
+          </ul>
+        <li>The <b>Alarm Manager API</b> allows access to system level alarms. It is typically used to trigger a Pending Intent that is used to start a service in the future. It is a good candidate if a background operation needs to be done at a particular time or during some interval. However, the documentation states that it is not a good candidate for scheduling network related jobs.</li>
+        <li>The <b>Job Scheduler API</b> is used to schedule background tasks based on certain criteria like low battery, connected to a metered network, device is idle etc.  This is a good candidate for scheduling long running network operations in the background. However, it is only available for devices running Android API level 21 and higher.</li>
+        <li>For older API levels Android provides the <b>GCM Network Manager</b>. This API is similar to Job Scheduler. Both the Job Scheduler API and GCM Network Manager are optimized to save battery. </li>
+        <li>The <b>Sync Adapter API</b> is used to sync local data on the device with a server</li>
+      </ol>
+    </li>
+    <li>Design a generic framework in app inventor that would allow non visible components to be scheduled.
+      <ol>
+        <li>We will need to design a new component that will provide methods for performing long running background operations . The methods will provide a handle to the APIs discussed above. This new component will probably extend the NonVisibleComponent class.</li>
+        <li>It is possible that long lived processes generate some data. We can save the generated data in internal storage of the app.</li>
+        <li>The background process might want to inform the UI of its progress or it might want to send some data to the UI for display. We will need to create a notification event that the background process can dispatch. </li>
+        <li>The internal file-system will have to be exposed in the designer as a non visible component. The blocks editor will provide some properties and methods that will enable the reading and writing of files in internal storage. </li>
+        <li>A property in the new component that will enable users to specify from the blocks editor if they want a non-visible component to run some operations in the background outside the scope of the application’s lifecycle.</li>
+        <li>Components that need to run outside the scope of the application’s lifecycle will have to extend the new component in bullet a.</li>
+      </ol>
+    </li>
+    <li>Create a prototype based on the above design.</li>
+    <li>Write automated unit tests to verify intended behavior. Since, the implementation will be Java, JUnit will be a good fit.</li>
+    <li>Document the framework.</li>
+  </ul>
 
 <h2 id="Q3">Interest in introductory programming</h2>
 <p>I worked 3.5 years as a Programmer Analyst for Cognizant Technology Solutions in India. Out of the 3.5 years I spent 2.5 years
