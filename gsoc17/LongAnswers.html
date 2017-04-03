@@ -14,7 +14,7 @@
  <h4>Synopsis</h4>
 
 <p>
-  Components are the building blocks of app inventor. They can be visible i.e. they are part of UI interface or they can be non visible i.e they are not part of the UI screen but provide access to built-in functions of the device. All components in app inventor are part of some screen or activity which means that if the screen is not visible or the screen is destroyed by the Android system, the components stop running. An example of this is the Pedometer component which stops running when the phone screen is off. Ideally, a pedometer app would want to keep running once started in the background until the user of the app explicitly stops it. To enable such behavior it is necessary to run such components on a thread separate from the UI thread in the background.  
+  Components are the building blocks of app inventor. They can be visible i.e. they are part of UI interface or they can be non visible i.e they are not part of the UI screen but provide access to built-in functions of the device. All components in app inventor are part of some screen or activity which means that if the screen is not visible or the screen is destroyed by the Android system, the components stop running. An example of this is the Pedometer component which stops running when the phone screen is off. Ideally, a pedometer app would want to keep running once started in the background until the user of the app explicitly stops it. To enable such behavior it is necessary to run such components in a background process and re-start the process every time the system kills it.  
 </p>
 <h4>Benefits to community</h4>
   <p>
