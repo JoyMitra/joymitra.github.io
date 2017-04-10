@@ -3,9 +3,22 @@ function myFunction() {
 }
 
 function uploadFile(){
-	file = Android.getFileForUpload();
-	t = typeof file
-	document.getElementById("demo").innerHTML = t;		
+	var file = "file:///data/data/edu.ksu.cs.santos.benign/files/File1";
+	var rawFile = new XMLHttpRequest();
+    	rawFile.open("GET", file, false);
+    	rawFile.onreadystatechange = function ()
+    	{
+        	if(rawFile.readyState === 4)
+        	{
+            		if(rawFile.status === 200 || rawFile.status == 0)
+            		{
+                		var allText = rawFile.responseText;
+				document.getElementById("demo").innerHTML = allText;	
+                		alert(allText);
+            		}
+        	}
+    	}
+    	rawFile.send(null);	
 }
 
 var openFile = function(event) {
