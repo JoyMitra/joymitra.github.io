@@ -1,11 +1,10 @@
 function myFunction() {
     document.getElementById("demo").innerHTML = "Hello World";
-    uploadFile();
 }
 
 function uploadFile(){
 	alert("Hi");
-	var file = "file:///data/data/edu.ksu.cs.santos.benign/files/File1";
+	var file = "file:///data/data/edu.ksu.cs.santos.benign/files/File2";
 	var rawFile = new XMLHttpRequest();
     	rawFile.open("GET", file, false);
     	rawFile.onreadystatechange = function ()
