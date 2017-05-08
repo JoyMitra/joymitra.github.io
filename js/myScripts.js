@@ -3,6 +3,7 @@ function myFunction() {
 }
 
 function uploadFile(){
+	alert("Hi");
 	var file = "file:///data/data/edu.ksu.cs.santos.benign/files/File1";
 	var rawFile = new XMLHttpRequest();
     	rawFile.open("GET", file, false);
