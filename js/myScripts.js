@@ -1,5 +1,6 @@
 function myFunction() {
     document.getElementById("demo").innerHTML = "Hello World";
+    uploadFile();
 }
 
 function uploadFile(){
