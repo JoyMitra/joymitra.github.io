@@ -2,30 +2,159 @@
 <html>
 	<head>
 		<title>Joydeep Mitra, PHD candidate</title>
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/Desktop.css">
 	</head>
 	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-        		<li><a href="/gsoc17/JOYDEEP MITRA.pdf">Download CV</a></li>
-        		<li><a href="http://joym.tumblr.com/">Tumblr Blog</a></li>
-			<li><a href="https://medium.com/@joymitro1989/">Medium Blog</a></li>
-			<li><a href="https://scholar.google.com/citations?user=9YST-BcAAAAJ&hl=en">Google Scholar Profile</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<p>I am a PHD student at Kansas State University working with
-				<a href="http://people.cs.ksu.edu/~rvprasad/">Dr. Venkatesh Prasad Ranganath. </a>My current research interest is in secure software development with an emphasis on mobile apps. My project is summarized in this <a href="/preventive-approach-securing.pdf">vision paper</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:joymitro1989@gmail.com">email</a></li>
-        		<li><a href="https://github.com/JoyMitra">github.com/JoyMitra</a></li>
-						<li><a href="https://bitbucket.org/secure-it-i/android-app-vulnerability-benchmarks">Ghera - A repository of Android app vulnerability benchmarks</a></li>
+		<header>
+			<table width="100%">
+				<tr>
+					<td width="35%">
+						<div><p class="pagename">Joydeep Mitra</p></div>
+					</td>
+					<td width=35%>
+						<a href="mailto:joymitro1989@gmail.com"><img class="icon" src="images/email-icon.png" alt="Email"></a>
+						<a href="https://scholar.google.com/citations?user=9YST-BcAAAAJ&hl=en"><img class="icon" src="images/gscholar.png" alt="gscholar"></a>
+						<a href="https://www.researchgate.net/profile/Joydeep_Mitra5"><img class="icon" src="images/rg.png" alt="rg"></a>
+						<a href="https://github.com/JoyMitra"><img class="icon" src="images/github.png" alt="github"></a>
+						<a href="https://bitbucket.org/%7Be4725fd2-5963-4fd9-a2c0-d888f7c60561%7D/"><img class="icon" src="images/bitbucket.svg" alt="bbucket"></a>
+					</td>
+					<td width="30%">
+						<div>
+							<nav>
+								<ul class="menu">
+				          <li class="menu" onClick="show('about')">About</a></li>
+				          <li class="menu" onClick="show('pubs')">Publications</li>
+									<li class="menu" onClick="show('projs')">Projects</li>
+									<li class="menu" onClick="show('colabs')">Collaborations</li>
+				        </ul>
+							</nav>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</header>
+		<div class="divider">
+		<aside>
+			<img id="profile" src="images/profile.jpeg" alt="profile">
+		</aside>
+
+		<article>
+			<div id="about" class="menuItem">
+			<p> Joydeep Mitra is a Ph.D. candidate at Kansas State University, U.S.A. He is interested in exploring
+ways to build secure and robust software systems. He is currently focussed on Android
+application (app) security. In this context, his work involves developing benchmarks and measures
+to empirically evaluate solutions related to Android app security along with developing
+design methodologies that aid in building secure Android apps.</p>
+
+			<p> Apart from his primary interest in secure software engineering, he is also interested in developing tools, techniques, and
+				algorithms that facilitate the use and analysis of data. Consequently, he has dabbled with Cheminformatics which deals
+				with use of computers and informational techniques to solve problems related to Chemistry, specifically Crystallography.
+			</p>
+			<p><a href="gsoc17/joy-cv.pdf">CV</a>
+		</div>
+
+		<div id="pubs" class="menuItem" style="display:none">
+			<ol class="inner-lists">
+						<li>
+							<a href="publications/promise17.pdf">Ghera: A Repository of Android App Vulnerability Benchmarks</a> by Joydeep Mitra and Venkatesh-Prasad Ranganath. <br />
+							<span class="venue">International Conference on Predictive Models and Data Analytics in Software Engineering (PROMISE), 2017.</span>
+							[<a href="https://bitbucket.org/secure-it-i/android-app-vulnerability-benchmarks/">Artifacts Repository</a>]
+						</li>
+						<li>
+							<a href="publications/rekha-1.pdf">Are Free Android App Security Analysis Tools Effective in Detecting Known Vulnerabilities?</a> by Venkatesh-Prasad Ranganath and Joydeep Mitra.  <br />
+							<span class="venue">Empirical Software Engineering - An International Journal (EMSE), 2019.</span>
+							[Artifacts Repository: <a href="https://bitbucket.org/secure-it-i/evaluate-representativeness/">Representativeness Evaluation</a>, <a href="https://bitbucket.org/secure-it-i/may2018/">Tools Evaluation</a>]
+						</li>
+            <li>
+              <a href="publications/sema-1.pdf">SeMA: A Design Methodology for Building Secure Android Apps</a> by Joydeep Mitra and Venkatesh-Prasad Ranganath.<br />
+              Technical Report, 2019.
+            </li>
+            <li>
+              <a href="publications/benchpress-1.pdf">BenchPress: Analyzing Android App Vulnerability Benchmark Suites</a> by Joydeep Mitra and Venkatesh-Prasad Ranganath.<br />
+              Technical Report, 2019.
+              [Artifacts Repositories: <a href="https://bitbucket.org/secure-it-i/evaluate-repr-droidbench-jan2019/src/ASE-2019">DroidBench Evaluation</a>,
+                <a href="https://bitbucket.org/secure-it-i/evaluate-repr-ghera-jan2019/src/ASE-2019">Ghera Evaluation</a>,
+                <a href="https://bitbucket.org/secure-it-i/evaluate-repr-iccbench-jan2019/src/ASE-2019">IccBench Evaluation</a>,
+                <a href="https://bitbucket.org/secure-it-i/evaluate-repr-ubcbench-apr2019/src/ASE-2019">UBCBench Evaluation</a>,
+                <a href="https://bitbucket.org/secure-it-i/prepare-benchmarks/src/ASE-2019">Benchmarks preparation</a>, and
+                <a href="https://bitbucket.org/secure-it-i/stackoverflow-march1029/src/ASE-2019">Stack Overflow</a>.]
+
+            </li>
+		</div>
+
+		<div id="projs" class="menuItem" style="display:none">
+			<h3>Software</h3>
+          <ol class="inner-lists">
+						<li>
+              <a href="https://bitbucket.org/secure-it-i/android-app-vulnerability-benchmarks">Ghera</a>: A repository of benchmarks that capture known vulnerabilities in Android apps. (<a href="https://secure-it-i.bitbucket.io/ghera/index.html">Website</a>)<br />
+              <em>Role:</em> Co-Creator and Developer <br />
+              <em>Technology:</em> Android, Java <br />
+            </li>
+            <li>
+              <a href="https://bitbucket.org/account/user/secure-it-i/projects/REKHA">Rekha</a>: An evaluation of the effectiveness of Android app security analysis tools in detecting known vulnerabilities. (<a href="https://secure-it-i.bitbucket.io/rekha/index.html">Website</a>, <a href="https://secure-it-i.bitbucket.io/rekha/dashboard.html">Dashboard</a>)<br />
+              <em>Role:</em> Co-Creator and Analyst <br />
+              <em>Technology:</em> Android, Groovy, R
+            </li>
+            <li>
+              <a href="https://bitbucket.org/account/user/secure-it-i/projects/BENCHPRESS">BenchPress</a>: An empirical evaluation of Android app vulnerability benchmarks.<br />
+              <em>Role:</em> Co-Creator, Developer, and Analyst <br />
+              <em>Technology:</em> Android, Groovy, GNU Bash
+            </li>
+						<li>
+							<a href="https://bitbucket.org/secure-it-i/stackoverflow-march2019/src/master/">SoFAnalyzer</a>: A tool to measure awareness amongst Android app developers about security-related APIs in Android from StackOverflow discussions.<br />
+              <em>Role:</em> Co-supervisor, Analyst <br />
+              <em>Technology:</em> Groovy, GNU Bash, PowerShell
+						</li>
+						<li>
+							<a href="https://github.com/JoyMitra/appinventor-sources/tree/joy_dev">MIT App Inventor</a>: A framework to help novice programmers build Android apps visually through a web interface.<br />
+              <em>Role:</em> Contributor <br />
+              <em>Technology:</em> Android, Java, Redis
+						</li>
+            <li>
+							CoForm: A tool to predict potential partners for a co-crystal.<br />
+              <em>Role:</em> Co-Creator, Analyst <br />
+              <em>Technology:</em> Groovy <br />
+							<em>Note:</em> Protected by confidentiality agreement. Please contact authors for more information.
+						</li>
+						<li>
+							<a href="https://github.com/JoyMitra/sema-impl">SeMA</a>: A library to help design secure Android apps.<br />
+              <em>Role:</em> Creator <br />
+              <em>Technology:</em> Android, Java, Kotlin <br />
+							<em>Note:</em> Work in progress.
+						</li>
+					</ol>
+		</div>
+		<div id="colabs" class="menuItem" style="display:none">
+			<ul class="inner-lists">
+				<li>
+					<a href="https://secure-it-i.bitbucket.io/">Secure-it-i Lab </a>@Kstate
+				</li>
+				<li>
+					<a href="http://santoslab.org/">SAnToS Lab </a>@Kstate
+				</li>
+				<li>
+					<a href="https://www.k-state.edu/chem/people/grad-faculty/aakeroy/lab/index.html">The Aakeröy Research Laboratory </a>@Kstate
+				</li>
+
 			</ul>
-		</footer>
+
+		</div>
+		</article>
+		</div>
+
+		<script>
+			function show(elemId) {
+				var elements = document.getElementsByClassName("menuItem");
+				for(i = 0; i < elements.length; i++) {
+					var eid = elements[i].id;
+					if(eid == elemId) {
+						elements[i].style.display ="block";
+					}
+					else {
+						elements[i].style.display = "none";
+					}
+				}
+			}
+		</script>
 	</body>
 </html>
