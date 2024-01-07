@@ -2,6 +2,7 @@ body {
   max-width: 60em;
   min-width: 30em;
   margin: auto;
+  font-size: large;
   /* background-color: #ddd */
 }
 
@@ -77,3 +78,9 @@ footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
 }
+
+.highlighted {
+      background-color: #f7f7f7; /* Set a light background color */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+      padding: 15px; /* Add some padding for better visual appeal */
+    }
